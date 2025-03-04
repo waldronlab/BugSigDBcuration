@@ -1,0 +1,34 @@
+name: BugSigDB study curation
+description: File a study curation.
+title: "[Study]: "
+labels: ["bugsigdb", "curation"]
+projects: ["BugSigDB"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this curation report!
+  - type: textarea
+    id: which-study
+    attributes:
+      label: Study Details
+      description: Which study are you going to curate?
+      placeholder: ex. Study Name – First Author – Journal Name Year
+    validations:
+      required: true
+  - type: textarea
+    id: where-study
+    attributes:
+      label: Study Source
+      description: Where is the study published?
+      placeholder: Enter URL to identify the source.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Bioconductor/bioc_coc_multilingual). 
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/Bioconductor/bioc_coc_multilingual)
+          required: true
