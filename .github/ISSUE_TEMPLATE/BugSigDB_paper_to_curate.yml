@@ -9,7 +9,7 @@ body:
       value: |
         Thanks for taking the time to fill out this curation report!
   - type: textarea
-    id: which
+    id: study-title
     attributes:
       label: Study Title
       description: Which study are you going to curate?
@@ -17,7 +17,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: who
+    id: first-author
     attributes:
       label: First Author
       description: Who is the first author of the study?
@@ -25,7 +25,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: where
+    id: journal
     attributes:
       label: Journal
       description: In which journal the study is published?
@@ -33,7 +33,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: when
+    id: publication-year
     attributes:
       label: Study Details
       description: When the study is published?
@@ -41,7 +41,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: where
+    id: study-source
     attributes:
       label: Study Source
       description: Where is the study published?
@@ -49,10 +49,10 @@ body:
     validations:
       required: true
   - type: checkboxes
-    id: terms
+    id: code-of-conduct
     attributes:
-      label: Code of Conduct
+      label: Code of Conduct Agreement
       description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Bioconductor/bioc_coc_multilingual). 
       options:
-        - label: I agree to follow this project's [Code of Conduct](https://github.com/Bioconductor/bioc_coc_multilingual)
+        - label: I agree to follow this project's Code of Conduct
           required: true
