@@ -22,7 +22,7 @@ body:
       label: Pubmed ID
       description: Enter the Pubmed ID if it is available
       placeholder: A pubmed ID (digits only)
-    validation:
+    validations:
       required: false
   - type: input
     id: doi
@@ -30,7 +30,7 @@ body:
       label: The Digital Object Identifier (DOI)
       description: Enter the DOI
       placeholder: https://doi.org/xxxxx
-    validation:
+    validations:
       required: true
   - type: textarea
     id: first-author
