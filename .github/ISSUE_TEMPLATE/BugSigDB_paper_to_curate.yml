@@ -9,7 +9,7 @@ body:
       value: |
         Thanks for taking the time to fill out this curation report!
   - type: textarea
-    id: which-study
+    id: which
     attributes:
       label: Study Title
       description: Which study are you going to curate?
@@ -17,7 +17,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: who-study
+    id: who
     attributes:
       label: First Author
       description: Who is the first author of the study?
@@ -25,7 +25,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: where-study
+    id: where
     attributes:
       label: Journal
       description: In which journal the study is published?
@@ -33,7 +33,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: when-study
+    id: when
     attributes:
       label: Study Details
       description: When the study is published?
@@ -41,7 +41,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: where-study
+    id: where
     attributes:
       label: Study Source
       description: Where is the study published?
