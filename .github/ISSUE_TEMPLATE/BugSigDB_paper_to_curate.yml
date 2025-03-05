@@ -20,7 +20,7 @@ body:
     id: who-study
     attributes:
       label: First Author
-      description: Which study are you going to curate?
+      description: Who is the first author of the study?
       placeholder: ex. Wang Y.
     validations:
       required: true
@@ -28,7 +28,7 @@ body:
     id: where-study
     attributes:
       label: Journal
-      description: Which study are you going to curate?
+      description: In which journal the study is published?
       placeholder: ex. Journal of International Medical Research
     validations:
       required: true
@@ -36,7 +36,7 @@ body:
     id: when-study
     attributes:
       label: Study Details
-      description: Which study are you going to curate?
+      description: When the study is published?
       placeholder: ex. 2020
     validations:
       required: true
