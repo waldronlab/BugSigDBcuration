@@ -11,9 +11,33 @@ body:
   - type: textarea
     id: which-study
     attributes:
+      label: Study Title
+      description: Which study are you going to curate?
+      placeholder: ex. Characteristics of the intestinal flora in patients with peripheral neuropathy associated with type 2 diabetes
+    validations:
+      required: true
+  - type: textarea
+    id: who-study
+    attributes:
+      label: First Author
+      description: Which study are you going to curate?
+      placeholder: ex. Wang Y.
+    validations:
+      required: true
+    - type: textarea
+    id: where-study
+    attributes:
+      label: Journal
+      description: Which study are you going to curate?
+      placeholder: ex. Journal of International Medical Research
+    validations:
+      required: true
+    - type: textarea
+    id: when-study
+    attributes:
       label: Study Details
       description: Which study are you going to curate?
-      placeholder: ex. Study Name – First Author – Journal Name Year
+      placeholder: ex. 2020
     validations:
       required: true
   - type: textarea
