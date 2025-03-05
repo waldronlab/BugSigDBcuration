@@ -24,7 +24,7 @@ body:
       placeholder: ex. Wang Y.
     validations:
       required: true
-    - type: textarea
+  - type: textarea
     id: where-study
     attributes:
       label: Journal
@@ -32,7 +32,7 @@ body:
       placeholder: ex. Journal of International Medical Research
     validations:
       required: true
-    - type: textarea
+  - type: textarea
     id: when-study
     attributes:
       label: Study Details
