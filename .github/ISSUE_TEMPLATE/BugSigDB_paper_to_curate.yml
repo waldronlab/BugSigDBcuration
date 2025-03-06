@@ -16,6 +16,22 @@ body:
       placeholder: ex. Characteristics of the intestinal flora in patients with peripheral neuropathy associated with type 2 diabetes
     validations:
       required: true
+  - type: input
+    id: pmid
+    attributes:
+      label: Pubmed ID
+      description: Enter the Pubmed ID if it is available
+      placeholder: A pubmed ID (digits only)
+    validations:
+      required: false
+  - type: input
+    id: doi
+    attributes:
+      label: The Digital Object Identifier (DOI)
+      description: Enter the DOI
+      placeholder: https://doi.org/xxxxx
+    validations:
+      required: true
   - type: textarea
     id: first-author
     attributes:
