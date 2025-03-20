@@ -1,9 +1,7 @@
-name: BugSigDB Cuation
+name: Data for BugSigDB Curation by DOI
 on:
   issues:
     types: [opened] 
-#  issues_comment:
-#    types: [created]
 
 jobs:
 
@@ -113,7 +111,7 @@ jobs:
               repo: context.repo.repo,
               body: 
               `
-              ### Study
+              ### Title
               ${{ steps.get-doi.outputs.TITLE }}
 
               ### DOI
