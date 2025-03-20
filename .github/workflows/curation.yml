@@ -21,7 +21,7 @@ jobs:
         id: cache
         uses: actions/cache@v4
         with:
-          path:
+          path: |
             /usr/local/lib/R/site-library
             /usr/local/lib/R/library
           key: ${{ runner.os }}-bugsigdb-curation
@@ -86,18 +86,15 @@ jobs:
             httr2::resp_body_json(simplifyVector = TRUE)
           
           pmid <- er$esearchresult$idlist
+
           system(paste0("echo DOI='", doi, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo AUTHOR='", author, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo TITLE='", title, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo JOURNAL='", journal, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo YEAR=", year, " >> $GITHUB_OUTPUT"))
           system(paste0("echo PMID=", pmid, " >> $GITHUB_OUTPUT"))
-          print(paste("DOI:", doi))
-          print(paste("PMID:", pmid))
-          print(paste("TITLE:", title))
-          print(paste("AUTHOR:", author))
-          print(paste("JOURNAL:", journal))
-          print(paste("YEAR:", year))
+
+          print(paste("DOI:", doi, "PMID:", pmid, "TITLE:", title, "AUTHOR:", author, "JOURNAL:", journal, "YEAR:", year))
         shell: Rscript {0}
 
       - uses: actions/github-script@v7

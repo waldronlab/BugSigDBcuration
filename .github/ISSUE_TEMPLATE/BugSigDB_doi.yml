@@ -3,7 +3,7 @@ description: |
   File a study curation by DOI. Attempts to automatically fetch study
   information.
 title: "[Study]: New Curation"
-labels: ["bugsigdb", "curation"]
+labels: ["paper to curate"]
 projects: ["BugSigDB"]
 body:
   - type: markdown
@@ -11,7 +11,9 @@ body:
       value: |
         Thanks for submitting this study for curation!
         
-        When you submit this form, a GitHub Action will attempt to find the title, first author, year of publication, and PMID. If it fails, you can manually submit a study curation.
+        When you submit this form, a GitHub Action will attempt to find the
+        title, first author, year of publication, and PMID. If it fails, you
+        can manually submit a study curation.
   - type: input
     id: doi
     attributes:
