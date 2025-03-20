@@ -1,7 +1,7 @@
 name: BugSigDB study curation
 description: File a study curation.
 title: "[Study]: "
-labels: ["bugsigdb", "curation"]
+labels: ["paper to curate"]
 projects: ["BugSigDB"]
 body:
   - type: markdown
