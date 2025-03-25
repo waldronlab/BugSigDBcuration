@@ -37,7 +37,16 @@ jobs:
             s <- stringr::str_replace_all(s, '"', "&quot;")
             s
           }
-          
+
+          # https://stackoverflow.com/questions/17227294/removing-html-tags-from-a-string-in-r#answer-17227415
+          cleanHtml <- function(s) {
+            gsub("<.*?>", "", s)
+          }
+
+          encodeAndClean <- function(s) {
+            cleanHtml(encodeQuotes(s))
+          }
+
           doi <- ""
           comments <- stringr::str_split("${{ github.event.issue.body }}", "\n", simplify = TRUE)
           for (comment in comments) {
@@ -53,7 +62,7 @@ jobs:
             httr2::resp_body_json(simplifyVector = TRUE)
 
           title <- ifelse("title" %in% names(cr$message),
-            encodeQuotes(cr$message$title),
+            encodeAndClean(cr$message$title),
             "")
 
           year <- ifelse("published" %in% names(cr$message),
@@ -61,18 +70,18 @@ jobs:
             "")
 
           journal <- ifelse("container-title" %in% names(cr$message),
-            encodeQuotes(cr$message$`container-title`[[1]]),
+            encodeAndClean(cr$message$`container-title`[[1]]),
             "")
 
           author <- ""
           if ('author' %in% names(cr$message)) {
-            author <- paste(encodeQuotes(cr$message$author$given[1]),
-                            encodeQuotes(cr$message$author$family[1]),
+            author <- paste(encodeAndClean(cr$message$author$given[1]),
+                            encodeAndClean(cr$message$author$family[1]),
                             sep = " ")
           }
 
           source <- ifelse("resource" %in% names(cr$message),
-                           encodeQuotes(cr$message$resource$primary$URL),
+                           encodeAndClean(cr$message$resource$primary$URL),
                            "")
           
           eutils <- paste0("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
