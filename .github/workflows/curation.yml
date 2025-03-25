@@ -40,7 +40,7 @@ jobs:
 
           # https://stackoverflow.com/questions/17227294/removing-html-tags-from-a-string-in-r#answer-17227415
           cleanHtml <- function(s) {
-            gsub("<.*?>", "", s)
+            stringr::str_squish(gsub("(<.*?>|\n)", "", s))
           }
 
           encodeAndClean <- function(s) {
