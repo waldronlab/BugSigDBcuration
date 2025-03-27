@@ -50,10 +50,9 @@ jobs:
           doi <- ""
           comments <- stringr::str_split("${{ github.event.issue.body }}", "\n", simplify = TRUE)
           for (comment in comments) {
-            if (stringr::str_detect(comment, "[0-9.]+/[A-Za-z0-9.-]+")) {
-              doi <- comment
+            doi <- stringr::str_squish(comment) |> stringr::str_extract("[0-9.]+/[A-Za-z0-9.-]+")
+            if (!is.na(doi))
               break
-            }  
           }
 
           crossref <- paste("https://api.crossref.org/works", doi, sep = "/")
@@ -92,9 +91,11 @@ jobs:
             httr2::req_perform() |>
             httr2::resp_body_json(simplifyVector = TRUE)
           
-          pmid <- er$esearchresult$idlist
+          pmid <- ifelse(length(er$esearchresult$idlist) != 0,
+                         er$esearchresult$idlist,
+                         "NA")
 
-          system(paste0("echo DOI='", doi, "' >> $GITHUB_OUTPUT"))
+          system(paste0("echo DOI='https://doi.org/", doi, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo AUTHOR='", author, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo TITLE='", title, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo JOURNAL='", journal, "' >> $GITHUB_OUTPUT"))
