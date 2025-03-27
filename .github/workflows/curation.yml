@@ -93,7 +93,7 @@ jobs:
           
           pmid <- ifelse(length(er$esearchresult$idlist) != 0,
                          er$esearchresult$idlist,
-                         "")
+                         "NA")
 
           system(paste0("echo DOI='https://doi.org/", doi, "' >> $GITHUB_OUTPUT"))
           system(paste0("echo AUTHOR='", author, "' >> $GITHUB_OUTPUT"))
