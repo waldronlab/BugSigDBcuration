@@ -15,6 +15,9 @@ jobs:
 
     steps:
 
+      - name: Set week number
+        run: echo "WEEK=$(date +'%Y-%U')" >> $GITHUB_ENV
+
       - name: Cache
         id: cache
         uses: actions/cache@v4
@@ -22,7 +25,7 @@ jobs:
           path: |
             /usr/local/lib/R/site-library
             /usr/local/lib/R/library
-          key: ${{ runner.os }}-bugsigdb-curation
+          key: ${{ runner.os }}-bugsigdb-curation-${{ env.WEEK }}
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
