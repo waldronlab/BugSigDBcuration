@@ -14,4 +14,4 @@ Outreachy applicants see https://github.com/waldronlab/BugSigDBcuration/issues/9
 * [bugSigSimple](https://github.com/waldronlab/bugSigSimple): Simple analyses of BugSigDB data in R
 * [BugSigDBStats](https://github.com/waldronlab/BugSigDBStats): Statistics and trends of BugSigDB
 * [BugSigDBPaper](https://github.com/waldronlab/BugSigDBPaper): Reproduces analyses of the [Nature Biotechnology publication](https://www.nature.com/articles/s41587-023-01872-y)
-* [community-bioc Slack Team](https://slack.bioconductor.org/): Join #bugsigdb channel
+* Join the [#bugsigdb channel](https://community-bioc.zulipchat.com/#narrow/channel/507638-bugsigdb) of the [community-bioc Zulip team](https://community-bioc.zulipchat.com/)
